@@ -12,21 +12,24 @@ import Alamofire
 
 class TimeVM: NSObject {
     
+    var resultData = PublishRelay<String>()
+    
+    var indicatorRelay = BehaviorRelay<Bool>(value: false)
+    
     var timeZoneRelay = PublishRelay<TimeZoneData>()
-    var timeZoneErrorEvent = PublishSubject<Error>()
+    var timeZoneErrorRelay = PublishRelay<Error>()
     
     var coordinateRelay = PublishRelay<TimeZoneData>()
-    var coordinateErrorEvent = PublishSubject<Error>()
+    var coordinateErrorRelay = PublishRelay<Error>()
     
     var ipRelay = PublishRelay<TimeZoneData>()
-    var ipErrorEvent = PublishSubject<Error>()
+    var ipErrorRelay = PublishRelay<Error>()
     
     
     
-    func getTimeZoneData(zone: String) {
-        print("getTimeZoneData - zone = \(zone)")
-        TimeAPIService.getTimeZoneWithZone(zone: zone, relay: timeZoneRelay, errorSubject: timeZoneErrorEvent)
-        
-    }
+//    func getTimeZoneData(zone: String) {
+//        print("getTimeZoneData - zone = \(zone)")
+//        TimeAPIService.getTimeZoneWithZone(zone: zone, relay: timeZoneRelay, errorSubject: timeZoneErrorEvent)
+//    }
     
 }

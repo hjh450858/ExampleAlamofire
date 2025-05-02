@@ -22,7 +22,8 @@ enum TimeRouter: URLRequestConvertible {
     var baseURL: URL {
         return URL(string: APIClient.BASE_URL + "/api/time/current")!
     }
-    /// 엔드포인트
+    
+    /// 경로
     var endPoint: String {
         switch self {
         case .zone:
@@ -34,7 +35,7 @@ enum TimeRouter: URLRequestConvertible {
         }
     }
     
-    ///
+    /// HTTP Method
     var method: HTTPMethod {
         switch self {
         default:
@@ -46,9 +47,6 @@ enum TimeRouter: URLRequestConvertible {
     var parameters: Parameters {
         switch self {
         case .zone(let zone):
-//            var parameter = Parameters()
-//            parameter["timeZone"] = zone
-//            return parameter
             return ["timeZone": zone]
         case .coordinate(let latitude, let longitude):
             var parameter = Parameters()
@@ -70,7 +68,7 @@ enum TimeRouter: URLRequestConvertible {
         // request 메소드 설정
         request.method = method
         // 메소드에 따른 작업 처리
-        switch method {
+        switch self {
         // 여기에 있는 것들은 다 .get이기에 하나로 묶음
         default:
             request = try URLEncoding.default.encode(request, with: parameters)

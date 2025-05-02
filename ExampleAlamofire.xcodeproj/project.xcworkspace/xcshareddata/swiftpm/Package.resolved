@@ -1,5 +1,5 @@
 {
-  "originHash" : "2b61aa444422c5539963fce6613557ebb655ff9dc7f16db7614b2587c4bff890",
+  "originHash" : "76a43a039e526b4930a38404de310109103b4b05a79e79cbec320d2ecbd5e08c",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -80,6 +80,15 @@
       "state" : {
         "revision" : "76f514eba5218bdf67659168ba227c77da5f75fe",
         "version" : "1.0.5"
+      }
+    },
+    {
+      "identity" : "materialactivityindicator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nspavlo/MaterialActivityIndicator",
+      "state" : {
+        "revision" : "9ed85a25d1870c57f3c3934425ebcdc5aea68736",
+        "version" : "0.0.7"
       }
     },
     {

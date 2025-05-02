@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D21CC61E2DC0B95E00D19AA5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D21CC61D2DC0B95E00D19AA5 /* Then */; };
 		D21CC65E2DC0C21B00D19AA5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D21CC65D2DC0C21B00D19AA5 /* IQKeyboardManagerSwift */; };
+		D21CC6612DC1F3C400D19AA5 /* MaterialActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = D21CC6602DC1F3C400D19AA5 /* MaterialActivityIndicator */; };
 		D25458782DC09CF800BF7BCD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D25458772DC09CF800BF7BCD /* Alamofire */; };
 		D254587C2DC09D4C00BF7BCD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D254587B2DC09D4C00BF7BCD /* SnapKit */; };
 		D25458A42DC0A84700BF7BCD /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = D25458A32DC0A84700BF7BCD /* RxBlocking */; };
@@ -77,6 +78,7 @@
 			files = (
 				D21CC65E2DC0C21B00D19AA5 /* IQKeyboardManagerSwift in Frameworks */,
 				D25458A82DC0A84700BF7BCD /* RxRelay in Frameworks */,
+				D21CC6612DC1F3C400D19AA5 /* MaterialActivityIndicator in Frameworks */,
 				D21CC61E2DC0B95E00D19AA5 /* Then in Frameworks */,
 				D25458782DC09CF800BF7BCD /* Alamofire in Frameworks */,
 				D25458A42DC0A84700BF7BCD /* RxBlocking in Frameworks */,
@@ -149,6 +151,7 @@
 				D25458A72DC0A84700BF7BCD /* RxRelay */,
 				D21CC61D2DC0B95E00D19AA5 /* Then */,
 				D21CC65D2DC0C21B00D19AA5 /* IQKeyboardManagerSwift */,
+				D21CC6602DC1F3C400D19AA5 /* MaterialActivityIndicator */,
 			);
 			productName = ExampleAlamofire;
 			productReference = D25458422DC09CAD00BF7BCD /* ExampleAlamofire.app */;
@@ -238,6 +241,7 @@
 				D25458A22DC0A84700BF7BCD /* XCRemoteSwiftPackageReference "RxSwift" */,
 				D21CC61C2DC0B95E00D19AA5 /* XCRemoteSwiftPackageReference "Then" */,
 				D21CC65C2DC0C21B00D19AA5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				D21CC65F2DC1F3C400D19AA5 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D25458432DC09CAD00BF7BCD /* Products */;
@@ -618,6 +622,14 @@
 				minimumVersion = 8.0.1;
 			};
 		};
+		D21CC65F2DC1F3C400D19AA5 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nspavlo/MaterialActivityIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
 		D25458762DC09CF800BF7BCD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -654,6 +666,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D21CC65C2DC0C21B00D19AA5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		D21CC6602DC1F3C400D19AA5 /* MaterialActivityIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D21CC65F2DC1F3C400D19AA5 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */;
+			productName = MaterialActivityIndicator;
 		};
 		D25458772DC09CF800BF7BCD /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

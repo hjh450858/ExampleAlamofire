@@ -11,7 +11,7 @@ import Alamofire
 // API 모니터
 final class ApiLogger: EventMonitor {
     
-    let queue = DispatchQueue(label: "going")
+//    let queue = DispatchQueue(label: "going")
     
     // Event called when any type of Request is resumed.
     func requestDidResume(_ request: Request) {
@@ -30,7 +30,7 @@ final class ApiLogger: EventMonitor {
                 if error._code == NSURLErrorTimedOut {
                     print("ApiLogger - request() - error - .sessionTaskFailed - [API 타임아웃 테스트] Time out occurs! !!!!!")
                     // 타임아웃 에러 팝업을 띄운다.
-                    self.sendRequestTimeoutNotification()
+//                    self.sendRequestTimeoutNotification()
                 }
             case .explicitlyCancelled:
                 print("ApiLogger - request() - error - .explicitlyCancelled - 취소가 되었다")

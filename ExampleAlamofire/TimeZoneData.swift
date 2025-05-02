@@ -31,8 +31,4 @@ struct TimeZoneData: Codable, CustomStringConvertible {
         }
         """
     }
-    
-//    var description: String {
-//        return "\(year).\(month).\(day)\n\(hour):\(minute):\(seconds):\(milliSeconds)\n\(timeZone)"
-//    }
 }

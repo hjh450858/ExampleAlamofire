@@ -15,15 +15,15 @@ final class APIClient {
     static let shared = APIClient()
     /// 메인 루트
     static var ROOT = "https://timeapi.io"
-    
+    /// 기본 URL
     static var BASE_URL = ROOT
     
     var session: Session
-    
+    /// 인터셉터
     let interceptors = Interceptor(interceptors: [
         BaseInterceptor()
     ])
-    
+    /// 모니터
     let monitors = [ApiLogger()] as [EventMonitor]
     
     init() {

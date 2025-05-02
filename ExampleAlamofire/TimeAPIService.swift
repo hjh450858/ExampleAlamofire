@@ -19,6 +19,7 @@ enum TimeAPIService {
             let request = APIClient.shared.session
                 .request(TimeRouter.zone(zone))
                 .validate()
+                // DecodableResponseSerializer를 사용해 서버에서 반환된 데이터를 지정된 DataDecoder을 사용하는 Decodable타입으로 변환
                 .responseDecodable(of: TimeZoneData.self) { response in
                     switch response.result {
                     case .success(let data):
@@ -35,9 +36,25 @@ enum TimeAPIService {
         }
     }
     
-    static func getTimeZoneWithZone(zone: String, relay: PublishRelay<TimeZoneData>, errorSubject: PublishSubject<Error>) {
+    static func getTimeZoneWithZone(zone: String, relay: PublishRelay<TimeZoneData>, errorRelay: PublishRelay<Error>) {
         let request = APIClient.shared.session
             .request(TimeRouter.zone(zone))
+            .validate()
+            // DecodableResponseSerializer를 사용해 서버에서 반환된 데이터를 지정된 DataDecoder을 사용하는 Decodable타입으로 변환
+            .responseDecodable(of: TimeZoneData.self) { response in
+                switch response.result {
+                case .success(let data):
+                    print("data = \(data)")
+                    relay.accept(data)
+                case .failure(let error):
+                    print("error = \(error)")
+                    errorRelay.accept(error)
+                }
+            }
+    }
+    static func getTimeZoneWithCoordinate(latitude: Float, longitude: Float, relay: PublishRelay<TimeZoneData>, errorRelay: PublishRelay<Error>) {
+        APIClient.shared.session
+            .request(TimeRouter.coordinate(latitude, longitude))
             .validate()
             .responseDecodable(of: TimeZoneData.self) { response in
                 switch response.result {
@@ -46,11 +63,24 @@ enum TimeAPIService {
                     relay.accept(data)
                 case .failure(let error):
                     print("error = \(error)")
-                    errorSubject.onNext(error)
+                    errorRelay.accept(error)
                 }
             }
     }
     
+    static func getTimeZoneWithIP(ip: String, relay: PublishRelay<TimeZoneData>, errorRelay: PublishRelay<Error>) {
+        APIClient.shared.session
+            .request(TimeRouter.ip(ip))
+            .validate()
+            .responseDecodable(of: TimeZoneData.self) { response in
+                switch response.result {
+                case .success(let data):
+                    relay.accept(data)
+                case .failure(let error):
+                    errorRelay.accept(error)
+                }
+            }
+    }
 }
 
 
