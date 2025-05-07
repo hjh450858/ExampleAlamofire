@@ -41,12 +41,12 @@ final class APIClient {
      
      static var VERSION : String = UserDefaultsManager.shared.getTestServer() ? "/v2" : "/v3"
      static var ROOT =
- //    "https://staby.ngrok.io"
-     UserDefaultsManager.shared.getTestServer() ? "https://going-api-dev.staby.co.kr" : "https://going-api.staby.co.kr"
+ //    "https://naver.com"
+     UserDefaultsManager.shared.getTestServer() ? "https://naver.com" : "https://google.com"
      static var BASE_URL = ROOT + VERSION
      
      ///채널톡 주소
-     static let CHAT_BOT_URL = "https://going.channel.io"
+     static let CHAT_BOT_URL = "https://test.com"
      
      let interceptors = Interceptor(interceptors: [
          BaseInterceptor() // application/json
@@ -64,12 +64,12 @@ final class APIClient {
      func updateURL(_ isTestServer: Bool) {
          if isTestServer {
              ApiClient.VERSION = "/v2"
-             ApiClient.ROOT = "https://going-api-dev.staby.co.kr"
+             ApiClient.ROOT = "https://kk"
          } else {
              ApiClient.VERSION = "/v3"
-             ApiClient.ROOT = "https://going-api.staby.co.kr"
+             ApiClient.ROOT = "https://da"
          }
- //        ApiClient.ROOT = "https://staby.ngrok.io"
+ //        ApiClient.ROOT = "https://dsa"
          
          ApiClient.BASE_URL = ApiClient.ROOT + ApiClient.VERSION
      }
