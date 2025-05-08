@@ -66,14 +66,21 @@ enum CalculationRouter: URLRequestConvertible {
         
         request.method = method
         
+        switch self {
+        default:
+            // post에서 요구하는 body가 JSON 타입이기에 JSONEncoding
+            request.httpBody = try JSONEncoding.default.encode(request, with: parameters).httpBody
+            return request
+        }
+        
         // JSON Encoding
         /*
          body가 JSON 타입을 요구함
          */
-        let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])
-        request.httpBody = jsonData
-        
-        return request
+//        let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])
+//        request.httpBody = jsonData
+//        
+//        return request
         
         /*
          // MARK: URLEncoding.default를 쓰면 안되는 이유

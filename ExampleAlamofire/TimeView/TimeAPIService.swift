@@ -17,14 +17,19 @@ enum TimeAPIService {
     static func getTimeZone(zone: String) -> Observable<TimeZoneData> {
         return Observable.create { observer in
             let request = APIClient.shared.session
+                // 만들어놓은 Router로 request
                 .request(TimeRouter.zone(zone))
-                .validate()
+                // 코드값이 설정해 놓은 값 안에 있을때만 받음
+                .validate(statusCode: 200...500)
                 // DecodableResponseSerializer를 사용해 서버에서 반환된 데이터를 지정된 DataDecoder을 사용하는 Decodable타입으로 변환
                 .responseDecodable(of: TimeZoneData.self) { response in
+                    // 결과 값
                     switch response.result {
+                    // 성공
                     case .success(let data):
                         observer.onNext(data)
                         observer.onCompleted()
+                    // 실패
                     case .failure(let error):
                         observer.onError(error)
                     }
@@ -37,7 +42,7 @@ enum TimeAPIService {
     }
     
     static func getTimeZoneWithZone(zone: String, relay: PublishRelay<TimeZoneData>, errorRelay: PublishRelay<Error>) {
-        let request = APIClient.shared.session
+        APIClient.shared.session
             .request(TimeRouter.zone(zone))
             .validate()
             // DecodableResponseSerializer를 사용해 서버에서 반환된 데이터를 지정된 DataDecoder을 사용하는 Decodable타입으로 변환
@@ -52,6 +57,7 @@ enum TimeAPIService {
                 }
             }
     }
+    
     static func getTimeZoneWithCoordinate(latitude: Float, longitude: Float, relay: PublishRelay<TimeZoneData>, errorRelay: PublishRelay<Error>) {
         APIClient.shared.session
             .request(TimeRouter.coordinate(latitude, longitude))
