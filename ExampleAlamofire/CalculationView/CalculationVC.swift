@@ -36,6 +36,7 @@ class CalculationVC: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
+        $0.addLeftPadding()
     }
     
     let timeSpanTF = UITextField().then {
@@ -43,6 +44,7 @@ class CalculationVC: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
+        $0.addLeftPadding()
     }
     
     let dateTimeTF = UITextField().then {
@@ -50,6 +52,7 @@ class CalculationVC: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
+        $0.addLeftPadding()
     }
     
     let dstAmbiguityTF = UITextField().then {
@@ -57,6 +60,7 @@ class CalculationVC: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
+        $0.addLeftPadding()
     }
     
     // 결과값 라벨

@@ -24,7 +24,7 @@ final class APIClient {
         BaseInterceptor()
     ])
     /// 모니터
-    let monitors = [ApiLogger()] as [EventMonitor]
+    let monitors = [APILogger()] as [EventMonitor]
     
     init() {
         // 세선에 인터셉터 및 모니터 주입

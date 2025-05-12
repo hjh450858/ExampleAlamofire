@@ -36,6 +36,7 @@ class TimeVC: UIViewController {
         $0.layer.borderColor = UIColor.black.cgColor
         $0.keyboardType = .numbersAndPunctuation
         $0.placeholder = "-90 ~ 90"
+        $0.addLeftPadding()
     }
     
     let longitudeView = UITextField().then {
@@ -44,6 +45,7 @@ class TimeVC: UIViewController {
         $0.layer.borderColor = UIColor.black.cgColor
         $0.keyboardType = .numbersAndPunctuation
         $0.placeholder = "-180 ~ 180"
+        $0.addLeftPadding()
     }
     
     let ipView = UITextField().then {
@@ -52,6 +54,7 @@ class TimeVC: UIViewController {
         $0.layer.borderColor = UIColor.black.cgColor
         $0.keyboardType = .numbersAndPunctuation
         $0.placeholder = "예시) 237.71.232.203"
+        $0.addLeftPadding()
     }
     
     let indicator = MaterialActivityIndicatorView().then {

@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
-        $0.setTitle("Time API", for: .normal)
+        $0.setTitle("Time API(GET)", for: .normal)
         $0.setTitleColor(.black, for: .normal)
     }
     
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
-        $0.setTitle("Time Zone API", for: .normal)
+        $0.setTitle("Time Zone API(미구현)", for: .normal)
         $0.setTitleColor(.black, for: .normal)
     }
     
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
-        $0.setTitle("Conversion API", for: .normal)
+        $0.setTitle("Conversion API(미구현)", for: .normal)
         $0.setTitleColor(.black, for: .normal)
     }
     
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
-        $0.setTitle("Calculation API", for: .normal)
+        $0.setTitle("Calculation API(POST)", for: .normal)
         $0.setTitleColor(.black, for: .normal)
     }
     
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 0.3
         $0.layer.borderColor = UIColor.black.cgColor
-        $0.setTitle("Health API", for: .normal)
+        $0.setTitle("Health API(미구현)", for: .normal)
         $0.setTitleColor(.black, for: .normal)
     }
     
