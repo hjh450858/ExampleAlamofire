@@ -18,7 +18,8 @@ final class BaseInterceptor: RequestInterceptor {
         request.addValue("application/json; charset=UTF-8", forHTTPHeaderField: "Accept")
         
         // TODO: API 구조에 맞게 토큰이 필요하면 토큰을 가져오고 헤더에 넣어줌 분기처리
-        request.addValue("Bearer ACCESS_TOKEN", forHTTPHeaderField: "Authorization")
+        // MARK: - OAuthAuthenticator에서 토큰을 넣어주고 있으므로 안써도 된다.
+//        request.addValue("Bearer ACCESS_TOKEN", forHTTPHeaderField: "Authorization")
         
         completion(.success(request))
     }

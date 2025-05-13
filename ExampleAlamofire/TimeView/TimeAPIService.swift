@@ -43,6 +43,8 @@ enum TimeAPIService {
     
     static func getTimeZoneWithZone(zone: String, relay: PublishRelay<TimeZoneData>, errorRelay: PublishRelay<Error>) {
         APIClient.shared.session
+            // MARK: - API에 access_token를 header에 넣을때 필요한 예제
+//            .request(TimeRouter.zone(zone), interceptor: APIHelper.getAuthInterceptor())
             .request(TimeRouter.zone(zone))
             .validate()
             // DecodableResponseSerializer를 사용해 서버에서 반환된 데이터를 지정된 DataDecoder을 사용하는 Decodable타입으로 변환
